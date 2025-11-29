@@ -14365,7 +14365,7 @@ var beepbox = (function (exports) {
             buffer.push(110, base64IntToCharCode[this.pitchChannelCount], base64IntToCharCode[this.noiseChannelCount], base64IntToCharCode[this.modChannelCount]);
             buffer.push(115, base64IntToCharCode[this.scale]);
             if (this.scale == Config.scales["dictionary"]["Custom"].index) {
-                for (var i = 1; i < Config.pitchesPerOctave; i++) {
+                for (var i = 1; i < this.edo; i++) {
                     buffer.push(base64IntToCharCode[this.scaleCustom[i] ? 1 : 0]);
                 }
             }
